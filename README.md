@@ -1,22 +1,39 @@
 # UCP_In_Campsim
+
 How to Run : 
+
     Firstly we have to make a "run_2core.sh" file which will help us run champsim for 2 core.
+    
     Now there will be a folder named dpc3_traces where we have to put the traces we want to run for out simulation.
+    
     Then,we have to open the terminal in that directory itself.
+    
     Now, first build the champsim using the following command : "./build_champsim.sh bimodal no no no no lru 2"
+    
     After building the champsim file, now run the 2core file using the following command :
+    
     "./run_2core.sh bimodal-no-no-no-no-lru-2core 1 10 0 gcc_13B.trace.xz gobmk_135B.trace.xz"
 
-    NOTE : The last two terms in the command are the traces that we are running in this dual core system.
+    NOTE :
+    
+    The last two terms in the command are the traces that we are running in this dual core system.
+    
            We can change them accordingly for the respective two cores.
+           
            We can change the number of simulations also by replacing the "10" in the command by our own number.
+           
 
     The output file will be created in the folder named "results_2core_10M".
+    
     A file named "mix0-bimodal-no-no-no-no-lru-2core.txt" will be generated in this folder which contains our test results.
 
 Implementation of UCP : 
+
+
     What is UCP?
-    Utility-Based Cache Partitioning is a low-overhead runtime approach that divides a shared cache between several programmes based on the expected reduction in cache misses for a given quantity of cache resources.
+    
+    Utility-Based Cache Partitioning is a low-overhead runtime approach that divides a shared cache between several programmes based on the expected         reduction in cache misses for a given quantity of cache resources.
+    
     The suggested technique uses a unique, cost-effective hardware circuit that requires less than 2kB of storage to monitor each application at runtime. 
     A partitioning algorithm uses the data obtained by the monitoring circuits to determine the quantity of cache resources given to each application.
     The goal of this project is to integrate UCP-based cache partitioning into Champsim, a trace-based simulator.
